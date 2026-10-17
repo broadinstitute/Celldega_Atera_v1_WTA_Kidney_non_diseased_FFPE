@@ -1,0 +1,3 @@
+*.parquet binary -delta
+*.webp binary -delta
+*.png binary -delta
