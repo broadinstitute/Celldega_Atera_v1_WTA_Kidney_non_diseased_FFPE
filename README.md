@@ -12,7 +12,12 @@ The transcript count was checked against the stored Zarr quality scores. The
 input `experiment.spatial` summary reports 1,083,799,964 high-quality transcripts;
 the DegaFiles preserve the records passing the stored QV threshold.
 
-After all upload batches finish, view the dataset with Celldega:
+The DegaFiles upload is complete. All 112,649 data files were uploaded in 145
+batches, each containing at most 1,000 files or 128 MiB, and the final Git tree
+was checked against the local inventory. Representative raw-file downloads were
+also checked by SHA-256.
+
+View the dataset with Celldega:
 
 ```python
 import celldega as dega
@@ -25,5 +30,11 @@ landscape = dega.viz.Landscape(
 landscape
 ```
 
-The data are committed in small batches. A partially uploaded repository may not
-yet contain every tile required by the viewer.
+## Annotated counts for linked Clustergrams
+
+The full [annotated count AnnData is available on Hugging Face](https://huggingface.co/datasets/broadinstitute/Celldega_Supporting_Data/blob/main/Atera_v1_WTA_Kidney_non_diseased_FFPE.h5ad).
+It contains 399,120 cells and 18,049 gene-expression features, raw counts,
+the default Leiden labels, Azimuth broad/coarse/fine annotations and scores,
+and the original UMAP. The compressed file is 1,401,432,095 bytes.
+
+SHA-256: `3002804d996888d071787f26a54a2dfd1eec70554c745908e207e933d4c6611d`.
